@@ -1,4 +1,3 @@
-import type { NextPage } from 'next'
 import { useSession } from 'next-auth/react'
 import Head from 'next/head'
 import Image from 'next/image'
@@ -6,7 +5,7 @@ import Dashboard from '../components/Dashboard'
 import { useRouter } from 'next/router'
 import Loader from '../components/Loader'
 
-const Home: NextPage = () => {
+export default function Home() {
   const router = useRouter();
   const { status, data: session } = useSession({
     required: true,
@@ -31,4 +30,3 @@ const Home: NextPage = () => {
   )
 }
 
-export default Home
